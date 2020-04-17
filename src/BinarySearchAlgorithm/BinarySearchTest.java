@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class BinarySearchTest {
 
@@ -35,7 +36,7 @@ class BinarySearchTest {
     @Test
     public void ExistingItemShouldReturnFound() {
 
-        assertEquals(5, binarySearch.find(-2));
+        assertEquals(0, binarySearch.find(-2));
     }
 
 
@@ -43,7 +44,7 @@ class BinarySearchTest {
     public void NotSortedArrayItemShouldReturnArrayNotSortedException() {
         int[] sampleArray = {5, 10, 20, 1, 3, -2, 4};
         binarySearch = new BinarySearch(sampleArray);
-        assertEquals(5, binarySearch.find(-2));
+        assertThrows(ArrayNotSortedException.class, () -> binarySearch.find(-2));
     }
 
 }

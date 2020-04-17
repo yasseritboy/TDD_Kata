@@ -13,7 +13,7 @@ public class BinarySearch {
         if (number == null || sampleArray == null)
             return -1;
         for (int i = 0; i < sampleArray.length; i++) {
-            if (sampleArray[i] > sampleArray[i++])
+            if (i < sampleArray.length - 1 && sampleArray[i] > sampleArray[i + 1])
                 throw new ArrayNotSortedException();
             if (sampleArray[i] == number)
                 return i;
