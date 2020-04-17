@@ -7,13 +7,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ArraySumCheckerTest {
 
-
     private ArraySumChecker arraySumChecker;
+
 
     @BeforeEach
     public void Setup() {
         arraySumChecker = new ArraySumChecker();
     }
+
 
     @Test
     public void CheckNull() {
@@ -21,6 +22,15 @@ class ArraySumCheckerTest {
         String result = arraySumChecker.checkSumElements(null);
         assertEquals("", result);
     }
+
+
+    @Test
+    public void CheckEmptyArray() {
+        int[] myArray = new int[0];
+        String result = arraySumChecker.checkSumElements(myArray);
+        assertEquals("even", result);
+    }
+
 
     @Test
     public void checkSumEvenElement() {
@@ -33,6 +43,7 @@ class ArraySumCheckerTest {
         assertEquals("even", result2);
     }
 
+
     @Test
     public void checkSumOddElement() {
         int[] x = {1, 2, 5};
@@ -43,6 +54,5 @@ class ArraySumCheckerTest {
         String result2 = arraySumChecker.checkSumElements(array2);
         assertEquals("even", result2);
     }
-
 
 }
