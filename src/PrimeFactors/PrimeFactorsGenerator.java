@@ -8,15 +8,13 @@ public class PrimeFactorsGenerator {
     public List<Integer> generatePrimeFactors(int number) {
         var pc = new PrimeNumberChecker();
         List<Integer> factors = new ArrayList<>();
-        int i = 2;
-        while (i <= number) {
+        for (int i = 1; i <= (number); i++)
             if (pc.IsPrime(i)) {
                 factors.add(i);
-                number /= i;
+                number -= i;
+                i = 2;
             }
 
-            i++;
-        }
         return factors;
 
     }
