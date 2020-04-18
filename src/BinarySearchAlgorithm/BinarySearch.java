@@ -2,6 +2,7 @@ package BinarySearchAlgorithm;
 
 public class BinarySearch {
     private int[] sampleArray;
+    private int numberOfSearchAttempts;
 
 
     public BinarySearch(int[] sampleArray) {
@@ -19,5 +20,10 @@ public class BinarySearch {
                 return i;
         }
         return -1;
+    }
+
+
+    public int getNumberOfSearchAttempts() {
+        return numberOfSearchAttempts;
     }
 }

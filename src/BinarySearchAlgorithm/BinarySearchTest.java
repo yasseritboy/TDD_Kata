@@ -20,28 +20,28 @@ class BinarySearchTest {
 
 
     @Test
-    public void NullArraySearchShouldReturnNotFound() {
+    void NullArraySearchShouldReturnNotFound() {
 
         assertEquals(-1, binarySearch.find(null));
     }
 
 
     @Test
-    public void NotExistingElementShouldReturnNotFound() {
+    void NotExistingElementShouldReturnNotFound() {
 
         assertEquals(-1, binarySearch.find(999));
     }
 
 
     @Test
-    public void ExistingItemShouldReturnFound() {
+    void ExistingItemShouldReturnFound() {
 
         assertEquals(0, binarySearch.find(-2));
     }
 
 
     @Test
-    public void NotSortedArrayItemShouldReturnArrayNotSortedException() {
+    void NotSortedArrayItemShouldReturnArrayNotSortedException() {
         int[] sampleArray = {5, 10, 20, 1, 3, -2, 4};
         binarySearch = new BinarySearch(sampleArray);
         assertThrows(ArrayNotSortedException.class, () -> binarySearch.find(-2));
